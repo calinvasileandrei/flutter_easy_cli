@@ -1,7 +1,6 @@
 import argparse # Add the argparse import
 import subprocess
 import os, fnmatch
-
 gitRepo = 'https://github.com/calinvasileandrei/flutter_easy_start'
 
 
@@ -71,8 +70,9 @@ parser.add_argument('--name', default="example_project", help="the project name"
 parser.add_argument('--company', default="com.example", help="the company name")
 
 args = vars(parser.parse_args())
-
-if(args['name'] == '' or args['name'] == None):
+if(args == [] or args == None):
+    print('Error a name and company name should be provided!')
+elif(args['name'] == '' or args['name'] == None):
     print('Error: Please pass a valid name parameter!')
 elif(args['company'] == '' or args['company'] == None):
     print('Error: Please pass a valid company parameter!')
